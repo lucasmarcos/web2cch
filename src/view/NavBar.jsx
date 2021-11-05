@@ -14,6 +14,10 @@ export const NavBar = () => {
         <li>
           <a href="/concurso/novo">Novo concurso</a>
         </li>
+    
+        <li>
+          <a href="/concurso/listar">Listar concursos</a>
+        </li>
 
         <li>
           <a href="/usuario/novo">Novo usuario</a>

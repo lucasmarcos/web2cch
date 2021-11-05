@@ -3,10 +3,10 @@ import { renderToStaticMarkup } from "react-dom/server.js";
 
 import { Template } from "./view/Template.js";
 
-export const render = (Page, props, config) => {
+export const render = (Page, props, config = {}) => {
+  let navBar = typeof config.navBar === "undefined" ? true : config.navBar;
   const templateProps = {
-    navBar: config.navBar,
-    titulo: config.titulo || "Bem-vindo"
+    navBar, titulo: config.titulo || "Bem-vindo"
   };
 
   const el = createElement(Page, props)

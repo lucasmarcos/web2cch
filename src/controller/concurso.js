@@ -1,6 +1,7 @@
 import { render } from "../render.js";
 
 import { CadastrarConcurso } from "../view/concurso/Cadastrar.js";
+import { ListaConcursos } from "../view/concurso/Lista.js";
 
 import concursoModel from "../model/concurso.js";
 
@@ -9,9 +10,9 @@ export default (db) => {
 
   return {
     getCadastrar: (req, res) => {
-      const { nome } = req.body;
-      concurso.insert(nome);
-      res.redirect("/");
+      res.send(
+        render(CadastrarConcurso)
+      );
     },
 
     postCadastrar: (req, res) => {
@@ -22,8 +23,9 @@ export default (db) => {
 
     getListar: (_, res) => {
       const todos = concurso.listar();
-      const jsons = todos.map(JSON.stringify);
-      res.send(jsons);
+      res.send(
+        render(ListaConcursos, { concursos: todos })
+      );
     },
   };
 };
