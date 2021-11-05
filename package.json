@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "packageManager": "yarn@3.1.0",
+  "dependencies": {
+    "better-sqlite3": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "react": "next",
+    "react-dom": "next",
+    "typescript": "rc"
+  }
+}
