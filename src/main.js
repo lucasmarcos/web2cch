@@ -4,6 +4,7 @@ import { router } from "./router.js";
 
 const server = Express();
 
+server.use(Express.urlencoded({ extended: false }));
 server.use(router);
 
 const HOST = "0.0.0.0",

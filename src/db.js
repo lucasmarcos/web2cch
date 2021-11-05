@@ -6,6 +6,6 @@ import { CREATE_TABLE as createTableParticipacao } from "./model/participacao.js
 
 export const db = SQLite("db.db", { verbose: console.log });
 
-db.exec(createTablePessoa);
-db.exec(createTableConcurso);
-db.exec(createTableParticipacao);
+db.prepare(createTablePessoa);
+db.prepare(createTableConcurso);
+db.prepare(createTableParticipacao);

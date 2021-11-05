@@ -1,5 +1,7 @@
 import { css } from "../utils.js";
 
+import { NavBar } from "./NavBar.js";
+
 const style = css`
   .container: {
 
@@ -23,7 +25,7 @@ export const Template = ({ titulo, navBar, children }) => {
 
       </head>
       <body>
-        { navBar ? <nav></nav> : <></> }
+        { navBar ? <NavBar/> : <></> }
 
         { children }
       </body>
