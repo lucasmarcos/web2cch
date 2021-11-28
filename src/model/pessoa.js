@@ -6,3 +6,18 @@ export const CREATE_TABLE = sql`
     nome TEXT
   );
 `;
+
+export default (db) => {
+  const stmListar = db.prepare("SELECT id, nome FROM pessoa;");
+  const stmInserir = db.prepare("INSERT INTO pessoa (nome) VALUES (?);");
+
+  return {
+    inserir: nome => {
+      stmInserir.run(nome);
+    },
+
+    listar: () => {
+      return stmListar.all();
+    },
+  };
+};

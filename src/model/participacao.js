@@ -7,3 +7,18 @@ export const CREATE_TABLE = sql`
     concurso INTEGER REFERENCES concurso(id)
   );
 `;
+
+export default (db) => {
+  const stmListar = db.prepare("SELECT id, pessoa, concurso FROM participacao;");
+  const stmInserir = db.prepare("INSERT INTO participacao (pessoa, concurso) VALUES (?, ?);");
+
+  return {
+    inserir: _ => {
+      stmInserir.run([]);
+    },
+
+    listar: () => {
+      return stmListar.all();
+    },
+  };
+};

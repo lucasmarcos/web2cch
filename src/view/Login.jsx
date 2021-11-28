@@ -14,7 +14,6 @@ export const Login = () => {
         </label>
 
         <button type="submit">Entrar</button>
-        
       </form>
     </div>
   );

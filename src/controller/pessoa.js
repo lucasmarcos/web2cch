@@ -1,14 +1,10 @@
-import { render } from "../render.js";
-
-import { CadastrarConcurso } from "../view/concurso/Cadastrar.js";
-import { ListaConcursos } from "../view/concurso/Lista.js";
-
-import modelConcurso from "../model/concurso.js";
+import modelPessoa from "../model/pessoa.js";
 
 export default (db) => {
-  const concurso = modelConcurso(db);
+  const pessoa = modelPessoa(db);
 
   return {
+    /*
     getCadastrar: (req, res) => {
       res.send(
         render(CadastrarConcurso)
@@ -27,5 +23,6 @@ export default (db) => {
         render(ListaConcursos, { concursos: todos })
       );
     },
+    */
   };
 };

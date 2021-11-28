@@ -1,12 +1,13 @@
 {
   "type": "module",
-  "packageManager": "yarn@3.1.0",
+  "packageManager": "yarn@3.1.1",
   "dependencies": {
-    "better-sqlite3": "latest",
     "chokidar": "latest",
+    "dotenv": "latest",
     "express": "latest",
     "express-session": "latest",
     "nodemon": "latest",
+    "postgres": "latest",
     "react": "next",
     "react-dom": "next",
     "typescript": "rc"

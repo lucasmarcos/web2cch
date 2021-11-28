@@ -8,17 +8,16 @@ export const CREATE_TABLE = sql`
 `;
 
 export default (db) => {
-  const listarStm = db.prepare("SELECT id, nome FROM concurso;");
-  const insertStm = db.prepare("INSERT INTO concurso (nome) VALUES (?);");
+  const stmListar = db.prepare("SELECT id, nome FROM concurso;");
+  const stmInserir = db.prepare("INSERT INTO concurso (nome) VALUES (?);");
 
   return {
-
-    insert: nome => {
-      insertStm.run(nome);
+    inserir: nome => {
+      stmInserir.run(nome);
     },
 
     listar: () => {
-      return listarStm.all();
+      return stmListar.all();
     },
   };
 };

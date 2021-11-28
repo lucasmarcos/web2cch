@@ -13,7 +13,7 @@ const HOST = "0.0.0.0",
 server.listen(PORT, HOST, err => {
   if (err) {
     console.log(`erro: ${err}`);
+  } else {
+    console.log(`servidor aberto em http://${HOST}:${PORT}`);
   }
-
-  console.log(`servidor aberto em http://${HOST}:${PORT}`);
 });
