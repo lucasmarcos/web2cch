@@ -7,6 +7,11 @@ export const CadastrarConcurso = () => {
           <input type="text" name="nome"/>
         </label>
 
+        <label>
+          Tipo
+          <input type="text" name="nome"/>
+        </label>
+
         <button type="submit">Cadastrar</button>
       </form>
     </div>

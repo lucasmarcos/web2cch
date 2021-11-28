@@ -2,7 +2,9 @@ export default sql => {
   sql`
     CREATE TABLE IF NOT EXISTS pessoa (
       id SERIAL PRIMARY KEY,
-      nome TEXT
+      nome TEXT,
+      email TEXT,
+      senha TEXT
     );
   `;
 
