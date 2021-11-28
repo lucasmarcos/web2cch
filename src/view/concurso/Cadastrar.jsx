@@ -12,6 +12,28 @@ export const CadastrarConcurso = () => {
           <input type="text" name="tipo"/>
         </label>
 
+        <label>
+          Início
+          <input type="date"/>
+        </label>
+
+        <label>
+          Encerramento
+          <input type="date"/>
+        </label>
+
+        <label>
+          Tipo select
+
+          <select>
+            <option>Música</option>
+            <option>Vídeo</option>
+            <option>Fotográfia</option>
+            <option>Pintura</option>
+            <option>Poema</option>
+          </select>
+        </label>
+
         <button type="submit">Cadastrar</button>
       </form>
     </div>

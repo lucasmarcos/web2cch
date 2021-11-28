@@ -10,12 +10,12 @@ export const CadastrarUsuario = () => {
 
         <label>
           E-mail
-          <input type="text"></input>
+          <input type="email"></input>
         </label>
 
         <label>
           Senha
-          <input type="text"></input>
+          <input type="password"></input>
         </label>
 
         <input type="button"></input>

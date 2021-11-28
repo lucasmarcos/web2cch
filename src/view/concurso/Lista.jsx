@@ -7,7 +7,7 @@ export const ListaConcursos = ({ concursos }) => {
           <th>Tipo</th>
           <th>Ínicio</th>
           <th>Encerramento</th>
-          <th>Votação</th>
+          <th>Participar</th>
         </tr>
       </thead>
       <tbody>
@@ -18,7 +18,7 @@ export const ListaConcursos = ({ concursos }) => {
             <td>00/00/0000 00:00</td>
             <td>00/00/0000 00:00</td>
             <td>
-              <a href={`/votar/${concurso.id}`}>Votar</a>
+              <a href={`/concurso/${concurso.id}`}>Participar</a>
             </td>
           </tr>
         )}
