@@ -1,12 +1,4 @@
-import { css } from "../utils.js";
-
 import { NavBar } from "./NavBar.js";
-
-const style = css`
-  .container: {
-
-  }
-`;
 
 export const Template = ({ titulo, navBar, children }) => {
   return (
@@ -19,7 +11,7 @@ export const Template = ({ titulo, navBar, children }) => {
 
         <title>{titulo}</title>
 
-        <style>{style}</style>
+        <link rel="stylesheet" href="/public/index.css"></link>
 
         <link rel="icon" href="data:"/>
 

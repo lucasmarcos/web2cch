@@ -2,16 +2,22 @@ export default sql => {
   sql`
     CREATE TABLE IF NOT EXISTS voto (
       id SERIAL PRIMARY KEY,
-      concurso INTEGER REFERENCES concurso(id),
+      participacao INTEGER REFERENCES participacao(id),
       data TEXT
     );
   `;
 
   return {
-    inserir: _ => {
+    inserir: id => {
+      sql`INSERT INTO voto (participacao, data) VALUES (${id}, '00/00/0000 00:00')`;
     },
 
-    listar: _ => {
+    contar: async id => {
+      const [ contagem ] = await sql`
+        SELECT COUNT(*) FROM voto WHERE participacao = ${id};
+      `;
+
+      return contagem["count"];
     },
   };
 };

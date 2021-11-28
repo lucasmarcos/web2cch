@@ -16,6 +16,6 @@
     "build": "tsc",
     "watch": "tsc -w",
     "serve": "node -r \"dotenv/config\" ./out/main.js",
-    "nodemon": "nodemon -w ./out -e js ./out/main.js"
+    "nodemon": "nodemon -r dotenv/config -w ./out -e js ./out/main.js"
   }
 }

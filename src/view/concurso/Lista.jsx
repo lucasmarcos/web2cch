@@ -14,6 +14,9 @@ export const ListaConcursos = ({ concursos }) => {
         {concursos.map(concurso =>
           <tr key={concurso.id}>
             <td>{concurso.nome}</td>
+            <td>{concurso.tipo}</td>
+            <td>00/00/0000 00:00</td>
+            <td>00/00/0000 00:00</td>
             <td>
               <a href={`/votar/${concurso.id}`}>Votar</a>
             </td>

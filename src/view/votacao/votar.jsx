@@ -1,9 +1,8 @@
-export const Votar = ({ id }) => {
+export const Votar = ({ votos, id }) => {
   return (
     <div>
-      <input type="button">
-        {id}
-      </input>
+      {votos}
+      <a href={`/votar/novo/${id}`}>VOTO</a>
     </div>
   );
 };

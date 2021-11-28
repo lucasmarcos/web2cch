@@ -5,6 +5,7 @@ import { render } from "./render.js";
 
 import { Index } from "./view/Index.js";
 import { Login } from "./view/Login.js";
+import { Administracao } from "./view/admin/Painel.js";
 
 import controllerConcurso from "./controller/concurso.js";
 import controllerPessoa from "./controller/pessoa.js";
@@ -30,8 +31,25 @@ router.get("/login", (req, res) => {
   );
 });
 
+router.get("/administracao", (req, res) => {
+  res.send(
+    render(Administracao, null, { titulo: "Administracao" })
+  );
+});
+
+router.get("/administracao/limpar", async (req, res) => {
+  await sql`DROP TABLE voto;`;
+  await sql`DROP TABLE participacao;`;
+  await sql`DROP TABLE concurso;`;
+  await sql`DROP TABLE pessoa;`;
+
+  res.redirect("/");
+});
 
 //  res.send(render(CadastrarConcurso, null, { navBar: true }));
 router.get("/concurso/novo", concurso.getCadastrar);
 router.post("/concurso/novo", concurso.postCadastrar);
 router.get("/concurso/listar", concurso.getListar);
+
+router.get("/votar/:id", voto.getIndex);
+router.get("/votar/novo/:id", voto.getNovoVoto);
