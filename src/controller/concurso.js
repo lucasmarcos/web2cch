@@ -17,12 +17,12 @@ export default sql => {
 
     postCadastrar: (req, res) => {
       const { nome } = req.body;
-      concurso.insert(nome);
+      concurso.inserir(nome);
       res.redirect("/");
     },
 
-    getListar: (_, res) => {
-      const todos = concurso.listar();
+    getListar: async (_, res) => {
+      const todos = await concurso.listar();
       res.send(
         render(ListaConcursos, { concursos: todos })
       );
