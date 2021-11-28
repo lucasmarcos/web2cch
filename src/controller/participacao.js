@@ -1,7 +1,7 @@
-import modelParticipacao from "../model/participacao";
+import modelParticipacao from "../model/participacao.js";
 
-export default (db) => {
-  const participacao = modelParticipacao(db);
+export default sql => {
+  const participacao = modelParticipacao(sql);
 
   return {
     /*

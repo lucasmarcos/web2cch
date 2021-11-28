@@ -1,17 +1,20 @@
 import { Router } from "express";
 
-import { db } from "./db.js";
+import { sql } from "./db.js";
 import { render } from "./render.js";
 
 import { Index } from "./view/Index.js";
 import { Login } from "./view/Login.js";
 
-// import { CadastrarConcurso } from "./view/concurso/Cadastrar.js";
-// import { CadastrarUsuario } from "./view/usuario/Cadastrar.js";
-
 import controllerConcurso from "./controller/concurso.js";
+import controllerPessoa from "./controller/pessoa.js";
+import controllerParticipacao from "./controller/participacao.js";
+import controllerVoto from "./controller/voto.js";
 
-const concurso = controllerConcurso(db);
+const concurso = controllerConcurso(sql);
+const pessoa = controllerPessoa(sql);
+const participacao = controllerParticipacao(sql);
+const voto = controllerVoto(sql);
 
 export const router = Router();
 

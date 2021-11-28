@@ -11,5 +11,10 @@
     "react": "next",
     "react-dom": "next",
     "typescript": "rc"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "serve": "node -r \"dotenv/config\" ./out/main.js"
   }
 }

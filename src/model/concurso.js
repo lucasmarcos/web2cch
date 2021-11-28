@@ -1,23 +1,24 @@
-import { sql } from "../utils.js";
+export default sql => {
+  sql`
+    CREATE TABLE IF NOT EXISTS concurso (
+      id INTEGER PRIMARY KEY,
+      nome TEXT
+    );
+  `;
 
-export const CREATE_TABLE = sql`
-  CREATE TABLE IF NOT EXISTS concurso (
-    id INTEGER PRIMARY KEY,
-    nome TEXT
-  );
-`;
-
-export default (db) => {
-  const stmListar = db.prepare("SELECT id, nome FROM concurso;");
-  const stmInserir = db.prepare("INSERT INTO concurso (nome) VALUES (?);");
+  /*
+  const stmListar = sql`SELECT id, nome FROM concurso;`;
+  const stmInserir = sql`INSERT INTO concurso (nome) VALUES (?);`;
+  */
 
   return {
     inserir: nome => {
-      stmInserir.run(nome);
+      // stmInserir.run(nome);
     },
 
     listar: () => {
-      return stmListar.all();
+      // return stmListar.all();
     },
   };
+
 };

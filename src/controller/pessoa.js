@@ -1,7 +1,7 @@
 import modelPessoa from "../model/pessoa.js";
 
-export default (db) => {
-  const pessoa = modelPessoa(db);
+export default sql => {
+  const pessoa = modelPessoa(sql);
 
   return {
     /*

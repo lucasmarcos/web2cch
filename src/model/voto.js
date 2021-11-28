@@ -1,24 +1,24 @@
-import { sql } from "../utils.js";
+export default sql => {
+  sql`
+    CREATE TABLE IF NOT EXISTS voto (
+      id INTEGER PRIMARY KEY,
+      concurso INTEGER REFERENCES concurso(id),
+      data TEXT
+    );
+  `;
 
-export const CREATE_TABLE = sql`
-  CREATE TABLE IF NOT EXISTS voto (
-    id INTEGER PRIMARY KEY,
-    concurso INTEGER REFERENCES concurso(id),
-    data TEXT
-  );
-`;
-
-export default (db) => {
-  const stmListar = db.prepare("SELECT id, concurso, data FROM voto;");
-  const stmInserir = db.prepare("INSERT INTO voto (concurso, data) VALUES (?, ?);");
+  /*
+  const stmListar = sql`SELECT id, concurso, data FROM voto;`;
+  const stmInserir = sql`INSERT INTO voto (concurso, data) VALUES (?, ?);`;
+  */
 
   return {
     inserir: _ => {
-      stmInserir.run([]);
+      // stmInserir.run([]);
     },
 
     listar: () => {
-      return stmListar.all();
+      // return stmListar.all();
     },
   };
 };

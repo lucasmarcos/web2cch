@@ -5,8 +5,8 @@ import { ListaConcursos } from "../view/concurso/Lista.js";
 
 import modelConcurso from "../model/concurso.js";
 
-export default (db) => {
-  const concurso = modelConcurso(db);
+export default sql => {
+  const concurso = modelConcurso(sql);
 
   return {
     getCadastrar: (req, res) => {

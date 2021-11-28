@@ -1,7 +1,7 @@
 import modelVoto from "../model/voto.js";
 
-export default (db) => {
-  const voto = modelVoto(db);
+export default sql => {
+  const voto = modelVoto(sql);
 
   return {
     /*
