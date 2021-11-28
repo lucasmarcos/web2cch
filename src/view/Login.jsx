@@ -2,16 +2,12 @@ export const Login = () => {
   return (
     <div>
       <h1>Login</h1>
-      <form>
-        <label>
-          E-mail
-          <input type="email"/>
-        </label>
+      <form className="form">
+        <label>E-mail</label>
+        <input type="email"/>
 
-        <label>
-          Senha
-          <input type="password"/>
-        </label>
+        <label>Senha</label>
+        <input type="password"/>
 
         <button type="submit">Entrar</button>
       </form>

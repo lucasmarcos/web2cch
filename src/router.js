@@ -1,5 +1,7 @@
 import { Router } from "express";
 
+import multer from "multer";
+
 import { sql } from "./db.js";
 import { render } from "./render.js";
 
@@ -18,6 +20,8 @@ const participacao = controllerParticipacao(sql);
 const voto = controllerVoto(sql);
 
 export const router = Router();
+
+const upload = multer({ dest: "./public/uploads" });
 
 router.get("/", (req, res) => {
   res.send(
@@ -52,3 +56,7 @@ router.get("/concurso/lista", concurso.getListar);
 
 router.get("/votar/:id", voto.getIndex);
 router.get("/votar/novo/:id", voto.getNovoVoto);
+
+router.get("/usuario/novo", pessoa.getCadastrar);
+router.post("/usuario/novo", pessoa.postCadastrar);
+router.get("/usuario/lista", pessoa.getLista);

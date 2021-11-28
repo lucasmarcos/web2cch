@@ -6,6 +6,7 @@
     "dotenv": "latest",
     "express": "latest",
     "express-session": "latest",
+    "multer": "latest",
     "nodemon": "latest",
     "postgres": "latest",
     "react": "next",

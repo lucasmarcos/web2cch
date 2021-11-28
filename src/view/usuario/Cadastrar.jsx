@@ -1,24 +1,30 @@
 export const CadastrarUsuario = () => {
   return (
     <div>
-      <form>
+      <form className="form" method="post" action="/usuario/novo">
+
+        <label>Nome</label>
+        <input type="text" name="nome"/>
+
+        <label>E-mail</label>
+        <input type="email" name="email"></input>
 
         <label>
-          Nome
-          <input type="text"></input>
+        Senha
         </label>
+        <input type="password" name="senha"></input>
 
         <label>
-          E-mail
-          <input type="email"></input>
+          Tipo
         </label>
+        <input type="text"></input>
 
         <label>
-          Senha
-          <input type="password"></input>
+          Colaborador? Familiar?
         </label>
+        <input type="text"></input>
 
-        <input type="button"></input>
+        <button action="submit">Cadastrar</button>
 
       </form>
     </div>

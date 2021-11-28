@@ -5,7 +5,8 @@ export const configuracaoEmpresa = {
   icone: "/icone.png",
   cor: "#0F0F0F",
   tiposDeConcurso: [
-    ""
+    "Poema", "Frase", "Canção", "Fotografia", "Desenho",
+    "entre outras atividades culturais",
   ],
 };
 

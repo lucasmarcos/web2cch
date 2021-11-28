@@ -12,3 +12,8 @@ body {
 nav ul {
   list-style-type: none;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
