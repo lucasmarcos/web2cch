@@ -46,10 +46,9 @@ router.get("/administracao/limpar", async (req, res) => {
   res.redirect("/");
 });
 
-//  res.send(render(CadastrarConcurso, null, { navBar: true }));
 router.get("/concurso/novo", concurso.getCadastrar);
 router.post("/concurso/novo", concurso.postCadastrar);
-router.get("/concurso/listar", concurso.getListar);
+router.get("/concurso/lista", concurso.getListar);
 
 router.get("/votar/:id", voto.getIndex);
 router.get("/votar/novo/:id", voto.getNovoVoto);

@@ -1,7 +1,7 @@
 export const NavBar = () => {
   return (
     <nav>
-      <ul>
+      <ul className="nav">
 
         <li>
           <a href="/">Página inicial</a>
@@ -16,7 +16,15 @@ export const NavBar = () => {
         </li>
 
         <li>
-          <a href="/concurso/listar">Listar concursos</a>
+          <a href="/concurso/lista">Lista de concursos</a>
+        </li>
+
+        <li>
+          <a href="/participacao/novo">Nova participação</a>
+        </li>
+
+        <li>
+          <a href="/participacao/lista">Lista de participações</a>
         </li>
 
         <li>
@@ -24,7 +32,11 @@ export const NavBar = () => {
         </li>
 
         <li>
-          <a href="/administracao">A administração daqui não é das melhores</a>
+          <a href="/usuario/lista">Lista de usuários</a>
+        </li>
+
+        <li>
+          <a href="/administracao">A administração daqui não é das melhores...</a>
         </li>
 
       </ul>
