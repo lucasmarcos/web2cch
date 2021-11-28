@@ -13,5 +13,5 @@ export const render = (Page, props, config = {}) => {
   const templated = createElement(Template, templateProps, el);
   const rendered = renderToStaticMarkup(templated);
 
-  return "<!doctype html>" + rendered;
+  return `<!doctype html>${rendered}`;
 };
