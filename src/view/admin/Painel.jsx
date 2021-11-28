@@ -3,6 +3,8 @@ export const Administracao = () => {
     <div>
       <a href="/administracao/limpar">Deletar tudo</a>
 
+      <h2>tipos de concurso</h2>
+
       <form>
 
         <h3>Empresa</h3>
