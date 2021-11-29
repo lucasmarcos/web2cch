@@ -34,8 +34,6 @@ export default sql => {
 
       const detalhes = await concurso.consultar(id);
 
-      console.log(detalhes);
-
       res.send(
         render(DetalhesConcurso, { concurso: detalhes })
       );

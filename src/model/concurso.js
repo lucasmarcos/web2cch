@@ -12,6 +12,9 @@ export default sql => {
   const participacao = modelParticipacao(sql);
 
   return {
+    init: async _ => {
+    },
+
     inserir: (nome, tipo) => {
       sql`INSERT INTO concurso (nome, tipo) VALUES (${nome}, ${tipo});`;
     },

@@ -9,6 +9,9 @@ export default sql => {
   `;
 
   return {
+    init: async _ => {
+    },
+
     buscar: async id => {
       const [ participacao ] = await sql`
         SELECT

@@ -50,6 +50,7 @@ router.get("/administracao/limpar", async (req, res) => {
   await sql`DROP TABLE participacao;`;
   await sql`DROP TABLE concurso;`;
   await sql`DROP TABLE pessoa;`;
+  await sql`DROP TABLE configuracao;`;
 
   res.redirect("/");
 });

@@ -8,6 +8,9 @@ export default sql => {
   `;
 
   return {
+    init: async _ => {
+    },
+
     inserir: id => {
       sql`INSERT INTO voto (participacao, data) VALUES (${id}, '00/00/0000 00:00')`;
     },
