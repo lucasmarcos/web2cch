@@ -1,3 +1,5 @@
+import modelParticipacao from "./participacao.js";
+
 export default sql => {
   sql`
     CREATE TABLE IF NOT EXISTS concurso (
@@ -6,6 +8,8 @@ export default sql => {
       tipo TEXT
     );
   `;
+
+  const participacao = modelParticipacao(sql);
 
   return {
     inserir: (nome, tipo) => {
@@ -16,6 +20,14 @@ export default sql => {
       const concursos = await sql`SELECT id, nome, tipo FROM concurso`;
       return concursos;
     },
+
+    consultar: async id => {
+      let [ concurso ] = await sql`SELECT id, nome, tipo FROM concurso WHERE id = ${id}`;
+
+      concurso.participacoes = await participacao.buscarParticipacoesDe(id);
+
+      return concurso;
+    }
   };
 
 };

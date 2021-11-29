@@ -4,6 +4,7 @@ import { render } from "../render.js";
 
 import { CadastrarConcurso } from "../view/concurso/Cadastrar.js";
 import { ListaConcursos } from "../view/concurso/Lista.js";
+import { DetalhesConcurso } from "../view/concurso/Detalhes.js";
 
 export default sql => {
   const concurso = modelConcurso(sql);
@@ -27,5 +28,17 @@ export default sql => {
         render(ListaConcursos, { concursos: todos })
       );
     },
+
+    getDetalhes: async (req, res) => {
+      const { id } = req.params;
+
+      const detalhes = await concurso.consultar(id);
+
+      console.log(detalhes);
+
+      res.send(
+        render(DetalhesConcurso, { concurso: detalhes })
+      );
+    }
   };
 };

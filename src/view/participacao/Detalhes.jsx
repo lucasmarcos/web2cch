@@ -1,9 +1,12 @@
-export const Detalhes = ({ participacao }) => {
+export const DetalhesParticipacao = ({ participacao }) => {
+  console.log(participacao);
+
   return (
     <div>
+      <h1>{participacao.nome}</h1>
       <p>Votos</p>
-      <h1>0</h1>
-      <a href={`/votos/${participacao.id}`}>Votar</a>
+      <h1>{participacao.votos}</h1>
+      <a href={`/votar/novo/${participacao.id}`}>Votar</a>
     </div>
   );
 };

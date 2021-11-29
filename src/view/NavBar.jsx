@@ -20,14 +20,6 @@ export const NavBar = () => {
         </li>
 
         <li>
-          <a href="/participacao/novo">Nova participação</a>
-        </li>
-
-        <li>
-          <a href="/participacao/lista">Lista de participações</a>
-        </li>
-
-        <li>
           <a href="/usuario/novo">Novo usuario</a>
         </li>
 
