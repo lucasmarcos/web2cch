@@ -1,7 +1,7 @@
 export const Votar = ({ votos, id }) => {
   return (
     <div>
-      {votos}
+      <p>{votos}</p>
       <a href={`/votar/novo/${id}`}>VOTO</a>
     </div>
   );
