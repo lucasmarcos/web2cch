@@ -1,11 +1,12 @@
-import Express from "express";
+import Express, { urlencoded } from "express";
 
+import { autenticacao  } from "./controller/login.js";
 import { router } from "./router.js";
 
 const server = Express();
 
-server.use(Express.urlencoded({ extended: false }));
-
+server.use(autenticacao);
+server.use(urlencoded({ extended: false }));
 server.use(router);
 
 server.use("/public", Express.static("./public"));

@@ -2,30 +2,19 @@ export const CadastrarConcurso = () => {
   return (
     <div>
       <form action="/concurso/novo" method="post" className="form">
-        <label>
-          Nome
-        </label>
+        <label>Nome</label>
         <input type="text" name="nome"/>
 
-        <label>
-          Tipo
-        </label>
+        <label>Tipo</label>
         <input type="text" name="tipo"/>
 
-        <label>
-          Início
-        </label>
+        <label>Início</label>
         <input type="date"/>
 
-        <label>
-          Encerramento
-        </label>
+        <label>Encerramento</label>
         <input type="date"/>
 
-        <label>
-          Tipo select
-
-        </label>
+        <label>Tipo (versão select html)</label>
         <select>
             <option>Música</option>
             <option>Vídeo</option>

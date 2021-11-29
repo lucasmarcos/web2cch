@@ -15,10 +15,10 @@ export const ListaConcursos = ({ concursos }) => {
           <tr key={concurso.id}>
             <td>{concurso.nome}</td>
             <td>{concurso.tipo}</td>
-            <td>00/00/0000 00:00</td>
-            <td>00/00/0000 00:00</td>
+            <td>{concurso.inicio}</td>
+            <td>{concurso.encerramento}</td>
             <td>
-              <a href={`/concurso/${concurso.id}`}>Participar</a>
+              <a href={`/concurso/${concurso.id}`}>Detalhes</a>
             </td>
           </tr>
         )}

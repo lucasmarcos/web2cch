@@ -6,5 +6,8 @@ export default sql => {
   const participacao = modelParticipacao(sql);
 
   return {
+    getDetalhes: async (req, res) => {
+
+    },
   };
 };

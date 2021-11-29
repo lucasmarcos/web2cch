@@ -9,8 +9,8 @@ import { Index } from "./view/Index.js";
 import { Login } from "./view/Login.js";
 import { Administracao } from "./view/admin/Painel.js";
 
-import controllerConcurso from "./controller/concurso.js";
 import controllerPessoa from "./controller/pessoa.js";
+import controllerConcurso from "./controller/concurso.js";
 import controllerParticipacao from "./controller/participacao.js";
 import controllerVoto from "./controller/voto.js";
 
@@ -53,6 +53,8 @@ router.get("/administracao/limpar", async (req, res) => {
 router.get("/concurso/novo", concurso.getCadastrar);
 router.post("/concurso/novo", concurso.postCadastrar);
 router.get("/concurso/lista", concurso.getListar);
+
+router.get("/concurso/:concurso/participacao/:id", participacao.getDetalhes);
 
 router.get("/votar/:id", voto.getIndex);
 router.get("/votar/novo/:id", voto.getNovoVoto);
