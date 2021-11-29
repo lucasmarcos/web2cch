@@ -1,5 +1,9 @@
 body {
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .nav {
@@ -16,4 +20,41 @@ nav ul {
 .form {
   display: flex;
   flex-direction: column;
+}
+
+.form label {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.form input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.form button {
+  padding: 1.25rem;
+  margin: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  max-width: fit-content;
+}
+
+.login h1 {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  border: 3px solid black;
+}
+
+th, td {
+  border: 3px solid black;
+  padding: 0.25rem;
 }

@@ -4,31 +4,19 @@ export const NavBar = () => {
       <ul className="nav">
 
         <li>
-          <a href="/">Página inicial</a>
+          <a href="/">Empresa</a>
         </li>
 
         <li>
-          <a href="/login">Login</a>
+          <a href="/concurso/lista">Concursos</a>
         </li>
 
         <li>
-          <a href="/concurso/novo">Novo concurso</a>
+          <a href="/login">Entrar</a>
         </li>
 
         <li>
-          <a href="/concurso/lista">Lista de concursos</a>
-        </li>
-
-        <li>
-          <a href="/usuario/novo">Novo usuario</a>
-        </li>
-
-        <li>
-          <a href="/usuario/lista">Lista de usuários</a>
-        </li>
-
-        <li>
-          <a href="/administracao">A administração daqui não é das melhores...</a>
+          <a href="/administracao" alt="A administração daqui não é das melhores...">Admin</a>
         </li>
 
       </ul>

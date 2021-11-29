@@ -1,3 +1,5 @@
+import { configuracaoEmpresa } from "../../db.js";
+
 const icon = (
   <svg width="150" height="100">
     <rect width="100%" height="100%" fill="#0F0F0F"/>
@@ -6,15 +8,43 @@ const icon = (
 );
 
 export const Administracao = () => {
+  const tipos = configuracaoEmpresa.tiposDeConcurso;
+
+  console.log(tipos);
+
   return (
     <div>
+      <ul>
+      <li>
       <a href="/administracao/limpar">Deletar tudo</a>
+      </li>
+      <li>
+      <a href="/">Cadastrar novo usuário</a>
+      </li>
+      <li>
+      <a href="/">Cadastrar novo concurso</a>
+      </li>
+      </ul>
 
       <h2>tipos de concurso</h2>
 
       <ul>
-        <li>1</li>
+        {tipos.map(t =>
+          <li key={t.tipo}>
+            <p>
+              <label>{t.tipo}</label>
+              <a href="/">x</a>
+            </p>
+            <p>
+              <label>
+                envio de arquivos
+                <input type="checkbox" checked={t.envioDeArquivos}/>
+              </label>
+            </p>
+          </li>
+        )}
       </ul>
+      <a href="/">adicionar</a>
 
       <form className="form">
 
@@ -34,6 +64,8 @@ export const Administracao = () => {
           Cor
           <input type="color"/>
         </label>
+
+        <button type="submit">Salvar</button>
 
       </form>
     </div>

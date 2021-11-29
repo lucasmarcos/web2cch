@@ -12,6 +12,10 @@ const cont = (
 export const Index = () => {
   return (
     <div>
+      <p>Vote nos concursos abertos!</p>
+      <li>
+        <ul>1</ul>
+      </li>
     </div>
   );
 };
