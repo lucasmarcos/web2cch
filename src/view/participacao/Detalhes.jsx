@@ -1,6 +1,4 @@
 export const DetalhesParticipacao = ({ participacao }) => {
-  console.log(participacao);
-
   return (
     <div>
       <h1>{participacao.nome}</h1>
