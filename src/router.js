@@ -13,6 +13,7 @@ import controllerPessoa from "./controller/pessoa.js";
 import controllerConcurso from "./controller/concurso.js";
 import controllerParticipacao from "./controller/participacao.js";
 import controllerVoto from "./controller/voto.js";
+import { getAdmin } from "./controller/admin.js";
 
 const concurso = controllerConcurso(sql);
 const pessoa = controllerPessoa(sql);
@@ -39,11 +40,7 @@ router.get("/logout", (_, res) => {
   res.redirect("/");
 });
 
-router.get("/administracao", (req, res) => {
-  res.send(
-    render(Administracao, null, { titulo: "Administracao" })
-  );
-});
+router.get("/administracao", getAdmin);
 
 router.get("/administracao/limpar", async (req, res) => {
   await sql`DROP TABLE voto;`;

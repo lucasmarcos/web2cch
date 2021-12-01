@@ -1,5 +1,3 @@
-import { configuracaoEmpresa } from "../../db.js";
-
 const icon = (
   <svg width="150" height="100">
     <rect width="100%" height="100%" fill="#0F0F0F"/>
@@ -7,29 +5,31 @@ const icon = (
   </svg>
 );
 
-export const Administracao = () => {
-  const tipos = configuracaoEmpresa.tiposDeConcurso;
-
-  console.log(tipos);
+export const Administracao = ({ config }) => {
+  const { tiposDeConcurso } = config;
+  console.log(config);
 
   return (
     <div>
+
       <ul>
-      <li>
-      <a href="/administracao/limpar">Deletar tudo</a>
-      </li>
-      <li>
-      <a href="/">Cadastrar novo usuário</a>
-      </li>
-      <li>
-      <a href="/">Cadastrar novo concurso</a>
-      </li>
+        <li>
+          <a href="/administracao/limpar">Deletar tudo</a>
+        </li>
+
+        <li>
+          <a href="/">Cadastrar novo usuário</a>
+        </li>
+
+        <li>
+          <a href="/">Cadastrar novo concurso</a>
+        </li>
       </ul>
 
       <h2>tipos de concurso</h2>
 
       <ul>
-        {tipos.map(t =>
+        {tiposDeConcurso.map(t =>
           <li key={t.tipo}>
             <p>
               <label>{t.tipo}</label>
@@ -38,7 +38,7 @@ export const Administracao = () => {
             <p>
               <label>
                 envio de arquivos
-                <input type="checkbox" checked={t.envioDeArquivos}/>
+                <input type="checkbox" defaultChecked={t.envioDeArquivos}/>
               </label>
             </p>
           </li>
@@ -52,22 +52,28 @@ export const Administracao = () => {
 
         <label>
           Nome
+          <h2>{config.nome}</h2>
           <input type="text"/>
         </label>
 
         <label>
           Ícone
+          <h2>{config.icone}</h2>
           <input type="file"/>
         </label>
 
         <label>
           Cor
+          <h2>{config.cor}</h2>
           <input type="color"/>
         </label>
 
         <button type="submit">Salvar</button>
 
       </form>
+
+      <h2>senha do admin</h2>
+      <h2>{config.senhaAdmin}</h2>
     </div>
   );
 };

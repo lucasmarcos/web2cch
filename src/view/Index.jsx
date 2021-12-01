@@ -14,7 +14,7 @@ export const Index = () => {
     <div>
       <p>Vote nos concursos abertos!</p>
       <li>
-        <ul>1</ul>
+        <ul></ul>
       </li>
     </div>
   );
