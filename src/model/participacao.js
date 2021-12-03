@@ -1,17 +1,5 @@
 export default sql => {
-  sql`
-    CREATE TABLE IF NOT EXISTS participacao (
-      id SERIAL PRIMARY KEY,
-      nome TEXT,
-      pessoa INTEGER REFERENCES pessoa(id),
-      concurso INTEGER REFERENCES concurso(id)
-    );
-  `;
-
   return {
-    init: async _ => {
-    },
-
     buscar: async id => {
       const [ participacao ] = await sql`
         SELECT

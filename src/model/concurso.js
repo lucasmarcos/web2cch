@@ -1,20 +1,9 @@
 import modelParticipacao from "./participacao.js";
 
 export default sql => {
-  sql`
-    CREATE TABLE IF NOT EXISTS concurso (
-      id SERIAL PRIMARY KEY,
-      nome TEXT,
-      tipo TEXT
-    );
-  `;
-
   const participacao = modelParticipacao(sql);
 
   return {
-    init: async _ => {
-    },
-
     inserir: (nome, tipo) => {
       sql`INSERT INTO concurso (nome, tipo) VALUES (${nome}, ${tipo});`;
     },

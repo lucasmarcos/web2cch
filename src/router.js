@@ -6,18 +6,19 @@ import { sql } from "./db.js";
 import { render } from "./render.js";
 
 import { Index } from "./view/Index.js";
-import { Login } from "./view/Login.js";
 
 import controllerPessoa from "./controller/pessoa.js";
 import controllerConcurso from "./controller/concurso.js";
 import controllerParticipacao from "./controller/participacao.js";
 import controllerVoto from "./controller/voto.js";
+import controllerLogin from "./controller/login.js";
 import { getAdmin } from "./controller/admin.js";
 
 const concurso = controllerConcurso(sql);
 const pessoa = controllerPessoa(sql);
 const participacao = controllerParticipacao(sql);
 const voto = controllerVoto(sql);
+const login = controllerLogin(sql);
 
 export const router = Router();
 
@@ -29,25 +30,9 @@ router.get("/", (_, res) => {
   );
 });
 
-router.get("/login", (req, res) => {
-  res.send(
-    render(Login, null, { navBar: false, titulo: "Login" })
-  );
-});
-
-router.get("/logout", (_, res) => {
-  res.redirect("/");
-});
-
 router.get("/administracao", getAdmin);
 
 router.get("/administracao/limpar", async (req, res) => {
-  await sql`DROP TABLE voto;`;
-  await sql`DROP TABLE participacao;`;
-  await sql`DROP TABLE concurso;`;
-  await sql`DROP TABLE pessoa;`;
-  await sql`DROP TABLE configuracao;`;
-
   res.redirect("/");
 });
 
@@ -66,3 +51,10 @@ router.get("/votar/novo/:id", voto.getNovoVoto);
 router.get("/usuario/novo", pessoa.getCadastrar);
 router.post("/usuario/novo", pessoa.postCadastrar);
 router.get("/usuario/lista", pessoa.getLista);
+
+router.get("/login", login.getLogin);
+router.post("/login", login.postLogin);
+
+router.get("/logout", (_, res) => {
+  res.redirect("/");
+});

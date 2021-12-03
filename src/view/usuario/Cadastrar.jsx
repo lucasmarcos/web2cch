@@ -14,15 +14,7 @@ export const CadastrarUsuario = () => {
         </label>
         <input type="password" name="senha"></input>
 
-        <label>
-          Tipo
-        </label>
-        <input type="text"></input>
-
-        <label>
-          Colaborador? Familiar?
-        </label>
-        <input type="text"></input>
+        <a href="/">adcionar familia</a>
 
         <button action="submit">Cadastrar</button>
 

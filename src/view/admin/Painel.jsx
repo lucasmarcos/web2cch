@@ -71,6 +71,15 @@ export const Administracao = ({ config }) => {
 
       <h2>senha do admin</h2>
       <h2>{config.senhaAdmin}</h2>
+
+      <pre>
+        coisas pra ficar nesse menu:
+
+        cadastrar novos usuarios
+        cadastrar novos concursos
+
+        ver todos os usuarios
+      </pre>
     </div>
   );
 };
