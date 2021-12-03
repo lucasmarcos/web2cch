@@ -6,9 +6,6 @@ const icon = (
 );
 
 export const Administracao = ({ config }) => {
-  const { tiposDeConcurso } = config;
-  console.log(config);
-
   return (
     <div>
 
@@ -29,7 +26,7 @@ export const Administracao = ({ config }) => {
       <h2>tipos de concurso</h2>
 
       <ul>
-        {tiposDeConcurso.map(t =>
+        {config.tiposDeConcurso.map(t =>
           <li key={t.tipo}>
             <p>
               <label>{t.tipo}</label>
