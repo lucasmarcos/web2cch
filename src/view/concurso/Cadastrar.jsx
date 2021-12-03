@@ -1,21 +1,23 @@
-export const CadastrarConcurso = () => {
+export const CadastrarConcurso = ({ tipos }) => {
+  const hoje = new Date().toJSON().slice(0, 10);
+
   return (
     <div>
       <form action="/concurso/novo" method="post" className="form">
         <label>Nome</label>
         <input type="text" name="nome"/>
 
-        <label>Tipo</label>
-        <input type="text" name="tipo"/>
+        <label>Edital</label>
+        <textarea rows="3" cols="40" name="edital"/>
 
         <label>Início</label>
-        <input type="date"/>
+        <input type="date" name="inicio" defaultValue={hoje}/>
 
         <label>Encerramento</label>
-        <input type="date"/>
+        <input type="date" name="encerramento" defaultValue={hoje}/>
 
-        <label>Tipo (versão select html)</label>
-        <select>
+        <label>Tipo</label>
+        <select name="tipo">
             <option>Música</option>
             <option>Vídeo</option>
             <option>Fotográfia</option>

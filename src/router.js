@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import multer from "multer";
 
-import { sql } from "./db.js";
+import { construir, destruir, sql } from "./db.js";
 import { render } from "./render.js";
 
 import { Index } from "./view/Index.js";
@@ -33,6 +33,8 @@ router.get("/", (_, res) => {
 router.get("/administracao", getAdmin);
 
 router.get("/administracao/limpar", async (req, res) => {
+  await destruir();
+  await construir();
   res.redirect("/");
 });
 
@@ -49,6 +51,8 @@ router.get("/votar/:id", voto.getIndex);
 router.get("/votar/novo/:id", voto.getNovoVoto);
 
 router.get("/usuario/novo", pessoa.getCadastrar);
+router.get("/usuario/novo/familiar/:id", pessoa.getCadastrarFamiliar);
+router.post("/usuario/novo/familiar/:id", pessoa.postCadastrarFamiliar);
 router.post("/usuario/novo", pessoa.postCadastrar);
 router.get("/usuario/lista", pessoa.getLista);
 

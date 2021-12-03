@@ -24,7 +24,7 @@ export default sql => {
       return true;
     } else {
       const res = await sql`
-        SELECT id, email, senha
+        SELECT id
         FROM pessoa
         WHERE email = ${email}
           AND senha = ${senha};

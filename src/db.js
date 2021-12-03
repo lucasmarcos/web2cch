@@ -29,16 +29,10 @@ export const construir = async _ => {
     CREATE TABLE IF NOT EXISTS concurso (
       id SERIAL PRIMARY KEY,
       nome TEXT,
-      tipo TEXT
-    );
-  `;
-
-  await sql`
-    CREATE TABLE IF NOT EXISTS participacao (
-      id SERIAL PRIMARY KEY,
-      nome TEXT,
-      pessoa INTEGER REFERENCES pessoa(id),
-      concurso INTEGER REFERENCES concurso(id)
+      tipo TEXT,
+      edital TEXT,
+      inicio TEXT,
+      encerramento TEXT
     );
   `;
 
@@ -49,6 +43,15 @@ export const construir = async _ => {
       email TEXT,
       senha TEXT,
       familiar INTEGER REFERENCES pessoa(id)
+    );
+  `;
+
+  await sql`
+    CREATE TABLE IF NOT EXISTS participacao (
+      id SERIAL PRIMARY KEY,
+      nome TEXT,
+      pessoa INTEGER REFERENCES pessoa(id),
+      concurso INTEGER REFERENCES concurso(id)
     );
   `;
 
@@ -116,5 +119,3 @@ export const buscarConfiguracao = async _ => {
 
   return config;
 };
-
-(async _ => await construir())();

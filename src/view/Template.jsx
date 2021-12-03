@@ -1,6 +1,7 @@
+import { buscarConfiguracao } from "../db.js";
 import { NavBar } from "./NavBar.js";
 
-export const Template = ({ titulo, navBar, children }) => {
+export const Template = ({ titulo, navBar, nome, children }) => {
   return (
     <html lang="pt">
       <head>
@@ -15,7 +16,7 @@ export const Template = ({ titulo, navBar, children }) => {
         <title>{titulo}</title>
       </head>
       <body>
-        { navBar ? <NavBar/> : <></> }
+        { navBar ? <NavBar nome={nome}/> : <></> }
 
         { children }
       </body>

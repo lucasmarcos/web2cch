@@ -6,7 +6,9 @@ import { Template } from "./view/Template.js";
 export const render = (Page, props, config = {}) => {
   let navBar = typeof config.navBar === "undefined" ? true : config.navBar;
   const templateProps = {
-    navBar, titulo: config.titulo || "Bem-vindo"
+    navBar,
+    titulo: config.titulo || "Bem-vindo",
+    nome: config.nome || "Empresa",
   };
 
   const el = createElement(Page, props)

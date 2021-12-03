@@ -3,6 +3,8 @@ export const CadastrarUsuario = () => {
     <div>
       <form className="form" method="post" action="/usuario/novo">
 
+        <input type="hidden" name="familiar"/>
+
         <label>Nome</label>
         <input type="text" name="nome"/>
 
@@ -13,8 +15,6 @@ export const CadastrarUsuario = () => {
         Senha
         </label>
         <input type="password" name="senha"></input>
-
-        <a href="/">adcionar familia</a>
 
         <button action="submit">Cadastrar</button>
 

@@ -15,11 +15,15 @@ export const Administracao = ({ config }) => {
         </li>
 
         <li>
-          <a href="/">Cadastrar novo usuário</a>
+          <a href="/usuario/novo">Cadastrar novo usuário</a>
         </li>
 
         <li>
-          <a href="/">Cadastrar novo concurso</a>
+          <a href="/concurso/novo">Cadastrar novo concurso</a>
+        </li>
+
+        <li>
+          <a href="/usuario/lista">Lista usuario</a>
         </li>
       </ul>
 

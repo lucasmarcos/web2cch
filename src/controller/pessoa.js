@@ -27,5 +27,13 @@ export default sql => {
         render(ListaUsuarios, { pessoas })
       );
     },
+
+    getCadastrarFamiliar: async (req, res) => {
+      res.redirect("/");
+    },
+
+    postCadastrarFamiliar: async (req, res) => {
+      res.redirect("/");
+    },
   };
 };

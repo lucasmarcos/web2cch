@@ -1,10 +1,11 @@
-export const NavBar = () => {
+export const NavBar = ({ nome }) => {
+
   return (
     <nav>
       <ul className="nav">
 
         <li>
-          <a href="/">Empresa</a>
+          <a href="/">{nome}</a>
         </li>
 
         <li>

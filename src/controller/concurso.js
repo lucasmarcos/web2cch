@@ -17,8 +17,8 @@ export default sql => {
     },
 
     postCadastrar: (req, res) => {
-      const { nome, tipo } = req.body;
-      concurso.inserir(nome, tipo);
+      const { nome, tipo, edital, inicio, encerramento } = req.body;
+      concurso.inserir(nome, tipo, edital, inicio, encerramento);
       res.redirect("/");
     },
 
