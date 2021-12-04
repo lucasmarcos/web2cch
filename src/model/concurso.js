@@ -34,6 +34,10 @@ export default sql => {
       concurso.participacoes = await participacao.buscarParticipacoesDe(id);
 
       return concurso;
+    },
+
+    listarConcursosAbertos: async _ => {
+      return [];
     }
   };
 
