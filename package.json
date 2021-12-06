@@ -18,5 +18,20 @@
     "watch": "tsc -w",
     "serve": "node -r dotenv/config ./out/main.js",
     "nodemon": "nodemon -r dotenv/config -w ./out -e js ./out/main.js"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "env": {
+      "node": true
+    }
   }
 }
